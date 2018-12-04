@@ -52,9 +52,6 @@ In this lab, we are going to write a Python program which can generate a network
 ---
 ## References
 
-> TODO: 
-> * Please add your references in the following
-
 * **Mininet**
     * [Mininet Walkthrough](http://mininet.org/walkthrough/)
     * [Introduction to Mininet](https://github.com/mininet/mininet/wiki/Introduction-to-Mininet)
@@ -77,10 +74,7 @@ In this lab, we are going to write a Python program which can generate a network
 ---
 ## Contributors
 
-> TODO:
-> * Please replace "YOUR_NAME" and "YOUR_GITHUB_LINK" into yours
-
-* [YOUR_NAME](YOUR_GITHUB_LINK)
+* [林詩哲](https://github.com/lin130917)
 * [David Lu](https://github.com/yungshenglu)
 
 ---
