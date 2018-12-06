@@ -42,18 +42,26 @@ mininet> h6 iperf -c 10.0.0.2 -u -i 1
 
 `TCLink`: Link with symmetric TC interfaces configured via opts
 
-`dumpNodeConnections()`: dumps connections to/from a set of nodes.
+`dumpNodeConnections`: dumps connections to/from a set of nodes.
 
-`setLogLevel( 'info' | 'debug' | 'output' )`: set Mininet's default output level; 'info' is recommended as it provides useful information.
+`setLogLevel`: set Mininet's default output level.
 
 `CLI`: Simple command-line interface to talk to nodes
 
 ### iPerf Commands
 
-> TODO:
-> * Describe the meaning of iPerf command you used in detail
+```
+mininet> h2 iperf -s -u -i 1 > ./out/result &
+mininet> h6 iperf -c 10.0.0.2 -u -i 1
+```
+The above commands will dump the result of iPerf’s measurement into the file ./src/out/result .
 
-
+| Command line option | Description |
+| ------------------- | ----------- |
+| -**s**, --server | Run iPerf in server mode. (This will only allow one iperf connection at a time) |
+| -**u**, --udp | Use UDP rather than TCP. |
+| -**i**, --interval ***n*** | Sets the interval time in seconds between periodic bandwidth, jitter, and loss reports. If non-zero, a report is made every ***interval*** seconds of the bandwidth since the last report. If zero, no periodic reports are printed. Default is zero. |
+| -**c**, --client ***host*** | Run iPerf in client mode, connecting to an iPerf server running on ***host***. |
 
 ### Tasks
 
