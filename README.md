@@ -26,8 +26,8 @@ $ ./topology.py
 ```
 3. Use the following iPerf commands to measure the topology.
 ```
-$ h2 iperf -s -u -i 1 > ./out/result &
-$ h6 iperf -c 10.0.0.2 -u -i 1
+mininet> h2 iperf -s -u -i 1 > ./out/result &
+mininet> h6 iperf -c 10.0.0.2 -u -i 1
 ```
 ![](/src/Capture.PNG)
 
