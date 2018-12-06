@@ -16,20 +16,21 @@ In this lab, we are going to write a Python program which can generate a network
 ---
 ## Execution
 
-1. Change the path to ./src/ .
-```
-$ cd src
-```
-2. Execute the program.
-```
-$ ./topology.py
-```
-3. Use the following iPerf commands to measure the topology.
-```
-mininet> h2 iperf -s -u -i 1 > ./out/result &
-mininet> h6 iperf -c 10.0.0.2 -u -i 1
-```
-![](/src/Capture.PNG)
+1. Execute the program.
+   ```
+   # Change the directory into /Network_Topology/src/
+   $ cd /root/Network_Topology/src/
+   # Change to the executable mode of topology.py
+   $ sudo chmod +x topology.py
+   # Run the code (topology.py)
+   $ sudo ./topology.py
+   ```
+2. Use the following iPerf commands to measure the topology.
+   ```
+   mininet> h2 iperf -s -u -i 1 > ./out/result &
+   mininet> h6 iperf -c 10.0.0.2 -u -i 1
+   ```
+   ![](/src/Capture.PNG)
 
 ---
 ## Description
@@ -69,13 +70,47 @@ The above commands will dump the result of iPerf’s measurement into the file .
 > * Describe how you finish this work step-by-step in detail
 
 1. **Environment Setup**
-
+   1. Join this lab on GitHub Classroom
+      - Click the following link to join this lab
+         - https://classroom.github.com/a/K8gaizQG
+      - Check my repository
+         - https://github.com/nctucn/lab2-lin130917
+   2. Login to the container using SSH
+      ```
+      # Open the terminal to connect to the container
+      $ ssh root@140.113.195.69 -p 16203
+      Password: cn2018
+      ```
+   3. Clone the GitHub repository
+      ```
+      $ git clone https://github.com/nctucn/lab2-lin130917.git Network_Topology
+      ```
+   4. Run Mininet for testing
+      ```
+      # Start the service of Open vSwitch
+      $ sudo service openvswitch-switch start
+      # Run Mininet for testing
+      $ sudo mn
+      ```
 
 2. **Example of Mininet**
-
+   - Run the example code
+      ```
+      # Change the directory into /Network_Topology/src/
+      $ cd /root/Network_Topology/src/
+      # Change to the executable mode of example.py
+      $ sudo chmod +x example.py
+      # Run example code (example.py)
+      $ sudo ./example.py
+      ```
+   - Troubleshooting
+      ```
+      # If Mininet crashes for some reason, clean it up!
+      $ sudo mn -c
+      ```
 
 3. **Topology Generator**
-
+   1. 
 
 4. **Measurement**
 
