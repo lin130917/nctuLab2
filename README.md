@@ -113,7 +113,7 @@ The above commands will dump the result of iPerf’s measurement into the file /
    2. Generate the topology via Mininet
       - Write a Python program named topology.py according to topo0.png and put it at the same place with example.py
       - Other requirements
-         - Dump every hosts’ connections in your program
+         - Dump every hosts’ connections in the program
             ```
             from mininet.util import dumpNodeConnections
             # Dump every hosts' and switches' connections
@@ -138,7 +138,7 @@ The above commands will dump the result of iPerf’s measurement into the file /
       mininet> h2 iperf -s -u -i 1 > ./out/result &
       mininet> h6 iperf -c 10.0.0.2 -u -i 1
       ```
-   - the rate of packet loss is an approximate value (21% ~ 26%)
+   - The rate of packet loss is an approximate value (21% ~ 26%)
 
 ---
 ## References
