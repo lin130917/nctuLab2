@@ -16,22 +16,44 @@ In this lab, we are going to write a Python program which can generate a network
 ---
 ## Execution
 
-> TODO: 
-> * Describe how to execute your program
-> * Show the screenshot of using iPerf command in Mininet
+1. Change the path to ./src/ .
+```
+$ cd src
+```
+2. Execute the program.
+```
+$ ./topology.py
+```
+3. Use the following iPerf commands to measure the topology.
+```
+$ h2 iperf -s -u -i 1 > ./out/result &
+$ h6 iperf -c 10.0.0.2 -u -i 1
+```
+![](/src/Capture.PNG)
 
 ---
 ## Description
 
 ### Mininet API in Python
 
-> TODO:
-> * Describe the meaning of Mininet API in Python you used in detail
+`Mininet`: Network emulation with hosts spawned in network namespaces
+
+`Topo`: Data center network representation for structured multi-trees
+
+`TCLink`: Link with symmetric TC interfaces configured via opts
+
+`dumpNodeConnections()`: dumps connections to/from a set of nodes.
+
+`setLogLevel( 'info' | 'debug' | 'output' )`: set Mininet's default output level; 'info' is recommended as it provides useful information.
+
+`CLI`: Simple command-line interface to talk to nodes
 
 ### iPerf Commands
 
 > TODO:
 > * Describe the meaning of iPerf command you used in detail
+
+
 
 ### Tasks
 
