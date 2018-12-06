@@ -55,7 +55,7 @@ In this lab, we are going to write a Python program which can generate a network
 mininet> h2 iperf -s -u -i 1 > ./out/result &
 mininet> h6 iperf -c 10.0.0.2 -u -i 1
 ```
-The above commands will dump the result of iPerf’s measurement into the file ./src/out/result .
+The above commands will dump the result of iPerf’s measurement into the file /Network_Topology/src/out/result .
 
 | Command line option | Description |
 | ------------------- | ----------- |
@@ -65,9 +65,6 @@ The above commands will dump the result of iPerf’s measurement into the file .
 | -**c**, --client ***host*** | Run iPerf in client mode, connecting to an iPerf server running on ***host***. |
 
 ### Tasks
-
-> TODO:
-> * Describe how you finish this work step-by-step in detail
 
 1. **Environment Setup**
    1. Join this lab on GitHub Classroom
@@ -110,9 +107,38 @@ The above commands will dump the result of iPerf’s measurement into the file .
       ```
 
 3. **Topology Generator**
-   1. 
+   1. View the topology I should generate
+      - 0616203 % 3 = 0
+      - /Network_Topology/src/topo/topo0.png
+   2. Generate the topology via Mininet
+      - Write a Python program named topology.py according to topo0.png and put it at the same place with example.py
+      - Other requirements
+         - Dump every hosts’ connections in your program
+            ```
+            from mininet.util import dumpNodeConnections
+            # Dump every hosts' and switches' connections
+            dumpNodeConnections(net.hosts)
+            dumpNodeConnections(net.switches)
+            ```
+         - Enter in the Mininet’s CLI mode in the program
+            ```
+            from mininet.cli import CLI
+            # Add the following code and do NOT use net.stop()
+            CLI(net)
+            ```
+      - Troubleshooting
+         ```
+         # If Mininet crashes for some reason, clean it up!
+         $ sudo mn -c
+         ```
 
 4. **Measurement**
+   - Use the following iPerf commands to measure the topology.
+      ```
+      mininet> h2 iperf -s -u -i 1 > ./out/result &
+      mininet> h6 iperf -c 10.0.0.2 -u -i 1
+      ```
+   - the rate of packet loss is an approximate value (21% ~ 26%)
 
 ---
 ## References
